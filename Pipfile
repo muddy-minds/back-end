@@ -6,11 +6,13 @@ verify_ssl = true
 [dev-packages]
 pep8 = "*"
 autopep8 = "*"
+pylint = "*"
 
 [packages]
 django = "*"
 djangorestframework = "*"
 python-decouple = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"

@@ -3,6 +3,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class Room(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=500)
@@ -11,12 +12,13 @@ class Room(models.Model):
     east = models.IntegerField(default=0)
     west = models.IntegerField(default=0)
 
+
 class Player(models.Model):
     name = models.CharField(max_length=50)
     items = ArrayField(
-            models.CharField(max_length=50, blank=True),
-            size=100,
-        )
+        models.CharField(max_length=50, blank=True),
+        size=100,
+    )
     description = models.CharField(max_length=500)
     health_points = models.FloatField()
     lives = models.IntegerField(default=3)
