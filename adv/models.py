@@ -1,12 +1,16 @@
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
+<<<<<<< HEAD:adv/models.py
 <<<<<<< HEAD:muddyminds/adv/models.py
 # Create your models here.
 
 
 =======
 >>>>>>> cc30bcee0cab7b639b5e9f81b5194eb547ddc56e:adv/models.py
+=======
+
+>>>>>>> f8b6b7f0baa8046ea3a3fb9e0c9a3cda3cbef61c:muddyminds/adv/models.py
 class Room(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=500)
@@ -27,32 +31,35 @@ class Player(models.Model):
     lives = models.IntegerField(default=3)
     room_id = models.ForeignKey(Room, models.SET_NULL, blank=True, null=True)
 
+
 class Npc(models.Model):
     name = models.CharField(max_length=50)
-    friend_id = models.ForeignKey(Player, models.SET_NULL, blank=True, null=True)
+    friend_id = models.ForeignKey(
+        Player, models.SET_NULL, blank=True, null=True)
     health_points = models.FloatField()
     lives = models.IntegerField(default=3)
     room_id = models.ForeignKey(Room, models.SET_NULL, blank=True, null=True)
     description = models.CharField(max_length=500)
 
+
 class RoomItems(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=500)
     room_id = models.ForeignKey(Room, models.SET_NULL, blank=True, null=True)
-    player_id = models.ForeignKey(Player, models.SET_NULL, blank=True, null=True)
+    player_id = models.ForeignKey(
+        Player, models.SET_NULL, blank=True, null=True)
 
     class Meta:
         abstract = True
 
+
 class FoodItem(RoomItems):
     health_points = models.FloatField()
+
 
 class Toys(RoomItems):
     some_points = models.FloatField()
 
+
 class Weapons(RoomItems):
     damage_points = models.FloatField()
-
-
-
-
