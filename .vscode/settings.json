@@ -1,3 +1,5 @@
 {
-    "python.pythonPath": "/Users/guillaumesavy/.local/share/virtualenvs/back-end-nz3ylfjB/bin/python"
+    "python.pythonPath": "C:\\Users\\Sem\\.virtualenvs\\back-end-SqvFSU2u\\Scripts\\python.exe",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
 }

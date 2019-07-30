@@ -6,13 +6,18 @@ verify_ssl = true
 [dev-packages]
 pep8 = "*"
 autopep8 = "*"
+pylint = "*"
 
 [packages]
 django = "*"
 djangorestframework = "*"
 python-decouple = "*"
+<<<<<<< HEAD
 django-heroku = "*"
 django-cors-headers = "*"
+=======
+psycopg2 = "*"
+>>>>>>> 218b3bf863a104fa04e7af9819e5d7d98010bf52
 
 [requires]
 python_version = "3.7"
