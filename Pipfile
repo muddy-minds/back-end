@@ -12,8 +12,14 @@ pylint = "*"
 django = "*"
 djangorestframework = "*"
 python-decouple = "*"
+<<<<<<< HEAD
 psycopg2-binary = "*"
 dj-database-url = "*"
+=======
+django-heroku = "*"
+django-cors-headers = "*"
+psycopg2 = "*"
+>>>>>>> francis-chen
 gunicorn = "*"
 whitenoise = "*"
 
