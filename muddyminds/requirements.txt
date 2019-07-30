@@ -1,5 +1,0 @@
-Django==1.9.8
-Python==3.7
-Gunicorn==19.9.0
-Psycopg2==2.8.3
-Whitenoise==4.1.3
