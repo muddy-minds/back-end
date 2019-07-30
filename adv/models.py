@@ -1,9 +1,12 @@
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
+<<<<<<< HEAD:muddyminds/adv/models.py
 # Create your models here.
 
 
+=======
+>>>>>>> cc30bcee0cab7b639b5e9f81b5194eb547ddc56e:adv/models.py
 class Room(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=500)
