@@ -37,11 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',    
+    'django.contrib.staticfiles',
     'rest_framework',
     'adv.apps.AdvConfig'
-    
-                
+
+
 
 ]
 
@@ -83,10 +83,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'muddyminds',
-        'USER': 'postgres',
+        'USER': 'guillaumesavy',
         'PASSWORD': 'toottaattoo8',
         'HOST': 'localhost',
-        
+
     }
 }
 
