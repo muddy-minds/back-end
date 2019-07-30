@@ -69,10 +69,6 @@
                 "sha256:d3a27550a8185e53b244ad7e79e307594b92fede8617d80200a8cce1fba2c60f",
                 "sha256:f0e6b697a975d9d3ccd04135316c947dd82d841067c7800ccf622a8717e98df1"
             ],
-<<<<<<< HEAD
-=======
-            "index": "pypi",
->>>>>>> 218b3bf863a104fa04e7af9819e5d7d98010bf52
             "version": "==2.8.3"
         },
         "python-decouple": {
