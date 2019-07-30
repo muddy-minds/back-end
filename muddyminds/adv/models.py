@@ -1,8 +1,6 @@
-from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
 # Create your models here.
-
 class Room(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=500)
@@ -13,10 +11,7 @@ class Room(models.Model):
 
 class Player(models.Model):
     name = models.CharField(max_length=50)
-    items = ArrayField(
-            models.CharField(max_length=50, blank=True),
-            size=100,
-        )
+    items = models.CharField(max_length=500)
     description = models.CharField(max_length=500)
     health_points = models.FloatField()
     lives = models.IntegerField(default=3)
