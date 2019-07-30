@@ -1,1 +1,2 @@
 web: gunicorn muddyminds:app
+web: heroku ps:scale web=1
