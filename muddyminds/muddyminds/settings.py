@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',    
     'rest_framework',
-    'adv'
+    'adv.apps.AdvConfig'
     
                 
 
@@ -81,8 +81,12 @@ WSGI_APPLICATION = 'muddyminds.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'muddyminds',
+        'USER': 'postgres',
+        'PASSWORD': 'toottaattoo8',
+        'HOST': 'localhost',
+        
     }
 }
 
