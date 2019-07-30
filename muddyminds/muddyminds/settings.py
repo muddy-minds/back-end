@@ -39,11 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',    
     'rest_framework',
-    'adv.apps.AdvConfig'
-    
-                
-
+    'adv.apps.AdvConfig',
+    'corsheaders'
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'app.CorsMiddleware' 
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'muddyminds.urls'
