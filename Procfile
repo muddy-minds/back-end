@@ -1,1 +1,1 @@
-web: gunicorn muddymids.wsgi
+web: gunicorn muddyminds.wsgi
