@@ -12,9 +12,10 @@ pylint = "*"
 django = "*"
 djangorestframework = "*"
 python-decouple = "*"
-gunicorn = "*"
 psycopg2-binary = "*"
 dj-database-url = "*"
+gunicorn = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.7"
