@@ -6,6 +6,6 @@ class RoomSerializer(serializers.ModelSerializer):
     """Serializer for room objects"""
     class Meta:
         model = Room
-        fields = ('id', 'name', 'description')
+        fields = ('id', 'name', 'description', 'north', 'south', 'east', 'west')
         read_only_fields = ('id',)
 
