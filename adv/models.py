@@ -10,6 +10,9 @@ class Room(models.Model):
     east = models.IntegerField(default=0)
     west = models.IntegerField(default=0)
 
+    def __str__(self):
+        return self.name
+
 
 class Player(models.Model):
     name = models.CharField(max_length=50)

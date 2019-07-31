@@ -40,8 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
     'adv.apps.AdvConfig',
-    'corsheaders'
+    'corsheaders',
+    'user',
+    'rooms',
+    'players',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -84,10 +88,10 @@ WSGI_APPLICATION = 'muddyminds.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'muddyminds',
-        'USER': 'postgres',
-        'PASSWORD': 'toottaattoo8',
-        'HOST': 'localhost'
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST')
 
     }
 }
