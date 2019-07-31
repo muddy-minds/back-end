@@ -15,7 +15,7 @@ class Room(models.Model):
     description = models.CharField(max_length=500)
     items = ArrayField(
         # RoomItemField
-        models.CharField(),
+        models.CharField(max_length=500),
         size=100,
     )
     north = models.IntegerField(default=0)
@@ -53,7 +53,7 @@ class Player(models.Model):
     name = models.CharField(max_length=50)
     items = ArrayField(
         # RoomItemField
-        models.CharField(),
+        models.CharField(max_length=500),
         size=100,
     )
     description = models.CharField(max_length=500)
@@ -121,7 +121,7 @@ class Player(models.Model):
             NPC.health_points -= item.damage_points
 
     def befriendNPC(self, NPC):
-        if isinstance(NPC, Npc) & NPC.friend_id not None:
+        if isinstance(NPC, Npc) & NPC.friend_id != None:
             NPC.friend_id = id
             print("You are now friends with", NPC.name)
 
