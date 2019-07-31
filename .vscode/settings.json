@@ -1,5 +1,11 @@
 {
-    "python.pythonPath": "/usr/local/bin/python3",
+    "python.pythonPath": "/Users/guillaumesavy/.pyenv/versions/3.7.0/bin/python",
     "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true
+    "python.linting.enabled": true,
+    "formatOnSave": true,
+    "python.linting.pep8Enabled": false,
+    "python.linting.pylintPath": "pylint",
+    "python.linting.pylintArgs": ["--load-plugins", "pylint_django"],
+    "python.venvPath": "${workspaceFolder}/backend/env/bin/python3",
+    "python.linting.pep8Args": ["--ignore=E501"]
 }
