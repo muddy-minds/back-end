@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/usr/local/bin/python3",
+    "python.pythonPath": "/Users/guillaumesavy/.pyenv/versions/3.7.0/bin/python",
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true
 }
