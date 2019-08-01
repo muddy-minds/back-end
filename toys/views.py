@@ -7,8 +7,6 @@ from adv.models import Toys
 from .serializers import ToysSerializer
 
 
-class ToysViewSet(viewsets.GenericViewSet, 
-                    mixins.ListModelMixin,
-                    mixins.CreateModelMixin):
+class ToysViewSet(viewsets.ModelViewSet):
     queryset = Toys.objects.all()
     serializer_class = ToysSerializer
