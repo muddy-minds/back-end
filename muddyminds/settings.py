@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'fooditems',
     'toys',
     'weapons',
+    'npc'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True

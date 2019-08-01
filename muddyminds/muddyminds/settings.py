@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'players',
     'fooditems',
     'toys',
-    'weapons',   
+    'weapons',
+    'npc'   
                 
 
 ]
