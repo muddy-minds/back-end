@@ -14,14 +14,8 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AddField(
             model_name='player',
-            name='items',
             field=django.contrib.postgres.fields.ArrayField(base_field=models.CharField(blank=True, max_length=50), default='none', size=100),
             preserve_default=False,
-        ),
-        migrations.AddField(
-            model_name='room',
-            name='items',
-            field=django.contrib.postgres.fields.jsonb.JSONField(default=dict),
         ),
         migrations.AlterField(
             model_name='room',

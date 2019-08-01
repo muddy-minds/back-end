@@ -120,6 +120,7 @@ class RoomItems(models.Model):
 
     class Meta:
         abstract = True
+        
 class FoodItem(RoomItems):
     health_points = models.FloatField()
     def __str__(self):
