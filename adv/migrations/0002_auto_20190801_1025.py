@@ -12,8 +12,10 @@ class Migration(migrations.Migration):
     operations = [
         migrations.RemoveField(
             model_name='player',
+            name='items',
         ),
         migrations.RemoveField(
             model_name='room',
+            name='items',
         ),
     ]
