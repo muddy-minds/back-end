@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -39,8 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',    
     'rest_framework',
-    'adv.apps.AdvConfig'
-    
+    'adv.apps.AdvConfig',
+    'corsheaders',
+    'user',
+    'rooms',
+    'players',
+    'fooditems',
+    'toys',
+    'weapons',   
                 
 
 ]

@@ -6,6 +6,7 @@ from .views import FoodItemViewSet
 
 router = DefaultRouter()
 router.register('', FoodItemViewSet)
+# router.register('/api/fooditems', FoodItemViewSet)
 
 
 
@@ -14,3 +15,7 @@ app_name = 'fooditems'
 urlpatterns = [
     path('', include(router.urls)),
 ]
+
+# urlpatterns = [
+#     path('', include(router.urls)),
+# ]

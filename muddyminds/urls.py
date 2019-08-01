@@ -24,4 +24,8 @@ urlpatterns = [
     path('api/rooms/', include('rooms.urls')),
     path('api/players/', include('players.urls')),
     path('api/fooditems/', include('fooditems.urls')),
+    # path('', include('fooditems.urls')),
+    path('api/toys/', include('toys.urls')),
+    path('api/weapons/', include('toys.urls')),
+    
 ]

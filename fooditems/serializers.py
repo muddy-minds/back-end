@@ -7,5 +7,5 @@ class FoodItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = FoodItem
         fields = ('id', 'name', 'description', 'room_id', 'health_points', 'player_id')
-        read_only_fields = ('id',)
+        # read_only_fields = ('id',)
 
