@@ -103,10 +103,6 @@ class Player(models.Model):
                     room_id = Room.objects.get(id=room_id).east 
                 else:
                     print("We cannot go east")
-    def attackNPC(self, NPC, item):
-        # check if NPC is Npc and a weapon exists in ArrayField
-        if isinstance(NPC, Npc) & Player.objects.filter(items__contains=[item] & isinstance(item, Weapons)):
-            NPC.health_points -= item.damage_points
     def befriendNPC(self, NPC):
         if isinstance(NPC, Npc) & NPC.friend_id != None:
             NPC.friend_id = id
