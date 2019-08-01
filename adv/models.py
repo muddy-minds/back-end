@@ -50,23 +50,7 @@ class Player(models.Model):
     health_points = models.FloatField()
     lives = models.IntegerField(default=3)
     room_id = models.ForeignKey(Room, models.SET_NULL, blank=True, null=True)
-
-    # def getItem(self, item):
-    #     if isInstance(RoomItems) & item.room_id == room_id:
-    #         item.player_id = id 
-    #         Player.objects.update(items = ArrayAppend('items', id))
-
-
-    # def dropItem(self, item):
-    #     if item.player_id == id:
-    #         itemInArrayField = Player.objects.filter(items___name = item.name)
-    #         if itemInArrayField != None:
-    #             item.player_id = None
-    #             Player.objects.update(items = ArrayRemove('items', id))
-                
-    # def readItem(self, item):
-    #     return item.description 
-
+ 
     def enterNewRoom(self, command):
         if type(command) == str:
             if command == "n":
