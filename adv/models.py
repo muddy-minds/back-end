@@ -37,6 +37,8 @@ class Npc(models.Model):
     lives = models.IntegerField(default=3)
     room_id = models.ForeignKey(Room, models.SET_NULL, blank=True, null=True)
     description = models.CharField(max_length=500)
+    def __str__(self):
+        return self.name
 
 
 class RoomItems(models.Model):
@@ -45,6 +47,9 @@ class RoomItems(models.Model):
     room_id = models.ForeignKey(Room, models.SET_NULL, blank=True, null=True)
     player_id = models.ForeignKey(
         Player, models.SET_NULL, blank=True, null=True)
+        
+    def __str__(self):
+        return self.name
 
     class Meta:
         abstract = True
