@@ -1,6 +1,8 @@
 from django.contrib.postgres.fields import ArrayField
+from django.contrib.postgres.fields import JSONField
 from django.db import models
 from django.db.models import Q
+from datetime import datetime
 
 # class RoomItemField(models.Field):
 #     description = models.CharField(max_length=500)
@@ -11,13 +13,9 @@ from django.db.models import Q
 
 
 class Room(models.Model):
-    name = models.CharField(max_length=50)
-    description = models.CharField(max_length=500)
-    items = ArrayField(
-        # RoomItemField
-        models.CharField(max_length=500),
-        size=100,
-    )
+    name = models.CharField(max_length=50, default="DEFAULT TITLE")
+    description = models.CharField(max_length=500, default="DEFAULT DESCRIPTION" )
+    items = JSONField()
     north = models.IntegerField(default=0)
     south = models.IntegerField(default=0)
     east = models.IntegerField(default=0)
@@ -51,11 +49,7 @@ class Room(models.Model):
 
 class Player(models.Model):
     name = models.CharField(max_length=50)
-    items = ArrayField(
-        # RoomItemField
-        models.CharField(max_length=500),
-        size=100,
-    )
+    items = JSONField()
     description = models.CharField(max_length=500)
     health_points = models.FloatField()
     lives = models.IntegerField(default=3)
