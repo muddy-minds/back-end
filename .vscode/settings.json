@@ -1,6 +1,6 @@
 {
-    "python.pythonPath": "/Users/guillaumesavy/.pyenv/versions/3.7.0/bin/python",
-    "python.linting.pylintEnabled": true,
+    "python.pythonPath": "C:\\Users\\Francis Chen\\Anaconda3\\envs\\ml-agents\\python.exe",
+    "python.linting.pylintEnabled": false,
     "python.linting.enabled": true,
     "formatOnSave": true,
     "python.linting.pep8Enabled": false,
