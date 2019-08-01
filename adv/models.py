@@ -115,6 +115,9 @@ class Player(models.Model):
         if isinstance(NPC, Npc) & NPC.friend_id == id:
             NPC.friend_id = None
             print("You are not friends with", NPC.name)
+    def __str__(self):
+        return self.name
+        
 class Npc(models.Model):
     name = models.CharField(max_length=50)
     friend_id = models.ForeignKey(
@@ -123,6 +126,9 @@ class Npc(models.Model):
     lives = models.IntegerField(default=3)
     room_id = models.ForeignKey(Room, models.SET_NULL, blank=True, null=True)
     description = models.CharField(max_length=500)
+    def __str__(self):
+        return self.name
+
 class RoomItems(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=500)
@@ -131,9 +137,18 @@ class RoomItems(models.Model):
         Player, models.SET_NULL, blank=True, null=True)
     class Meta:
         abstract = True
+
 class FoodItem(RoomItems):
     health_points = models.FloatField()
+    def __str__(self):
+        return self.name
+
 class Toys(RoomItems):
     some_points = models.FloatField()
+    def __str__(self):
+        return self.name
+
 class Weapons(RoomItems):
     damage_points = models.FloatField()
+    def __str__(self):
+        return self.name
