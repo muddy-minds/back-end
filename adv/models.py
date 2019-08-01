@@ -50,6 +50,9 @@ class RoomItems(models.Model):
 class FoodItem(RoomItems):
     health_points = models.FloatField()
 
+    def __str__(self):
+        return self.name
+
 
 class Toys(RoomItems):
     some_points = models.FloatField()
@@ -57,3 +60,4 @@ class Toys(RoomItems):
 
 class Weapons(RoomItems):
     damage_points = models.FloatField()
+    

@@ -6,5 +6,5 @@ class PlayerSerializer(serializers.ModelSerializer):
     """Serializer for player objects"""
     class Meta:
         model = Player
-        fields = ('id', 'name', 'items', 'health_points', 'lives', 'room_id')
+        fields = ('id', 'name', 'description', 'items', 'health_points', 'lives', 'room_id')
         read_only_fields = ('id',)
