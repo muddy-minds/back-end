@@ -10,7 +10,7 @@ class PlayerViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         """Retrive the player for the authenticated user"""
-        return self.queryset.filter(user=self.request.user)
+        return self.queryset.filter(name=self.request.name)
 
     
     def get_serializer_class(self):
