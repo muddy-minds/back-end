@@ -1,5 +1,4 @@
-from rest_framework import viewsets, mixins
-
+from rest_framework import viewsets
 from adv.models import Player
 from .serializers import PlayerSerializer
 
@@ -20,6 +19,3 @@ class PlayerViewSet(viewsets.ModelViewSet):
 
     #     return self.serializer_class
 
-    def create_player(sef, serializer):
-        """Create a new player"""
-        serializer.save(user=self.request.user)

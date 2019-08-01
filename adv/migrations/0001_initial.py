@@ -18,7 +18,6 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=50)),
-                ('items', django.contrib.postgres.fields.jsonb.JSONField()),
                 ('description', models.CharField(max_length=500)),
                 ('health_points', models.FloatField()),
                 ('lives', models.IntegerField(default=3)),
@@ -30,7 +29,6 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(default='DEFAULT TITLE', max_length=50)),
                 ('description', models.CharField(default='DEFAULT DESCRIPTION', max_length=500)),
-                ('items', django.contrib.postgres.fields.jsonb.JSONField()),
                 ('north', models.IntegerField(default=0)),
                 ('south', models.IntegerField(default=0)),
                 ('east', models.IntegerField(default=0)),
