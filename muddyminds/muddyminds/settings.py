@@ -24,9 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost',
+                 '127.0.0.1',  'muddyminds.herokuapp.com']
 
 
 # Application definition
@@ -39,8 +40,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',    
     'rest_framework',
-    'adv.apps.AdvConfig'
-    
+    'adv.apps.AdvConfig',
+    'corsheaders',
+    'user',
+    'rooms',
+    'players',
+    'fooditems',
+    'toys',
+    'weapons',
+    'npc'   
                 
 
 ]

@@ -46,6 +46,10 @@ INSTALLED_APPS = [
     'user',
     'rooms',
     'players',
+    'fooditems',
+    'toys',
+    'weapons',
+    'npc'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True

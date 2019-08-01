@@ -1,9 +1,9 @@
 {
-    "python.pythonPath": "C:\\Users\\Francis Chen\\Anaconda3\\envs\\ml-agents\\python.exe",
-    "python.linting.pylintEnabled": false,
+    "python.pythonPath": "C:\\Users\\Sem\\.virtualenvs\\back-end-SqvFSU2u\\Scripts\\python.exe",
+    "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
     "formatOnSave": true,
-    "python.linting.pep8Enabled": true,
+    "python.linting.pep8Enabled": false,
     "python.linting.pylintPath": "pylint",
     "python.linting.pylintArgs": ["--load-plugins", "pylint_django"],
     "python.venvPath": "${workspaceFolder}/backend/env/bin/python3",
