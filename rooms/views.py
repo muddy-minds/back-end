@@ -1,11 +1,9 @@
-from rest_framework import viewsets, mixins
+from rest_framework import viewsets
 
 from adv.models import Room
 from .serializers import RoomSerializer
 
-class RoomViewSet(viewsets.GenericViewSet, 
-                    mixins.ListModelMixin,
-                    mixins.CreateModelMixin):
+class RoomViewSet(viewsets.ModelViewSet):
     queryset = Room.objects.all()
     serializer_class = RoomSerializer
 
