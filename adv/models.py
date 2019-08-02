@@ -50,11 +50,11 @@ class Player(models.Model):
     description = models.CharField(max_length=500)
     health_points = models.FloatField()
     lives = models.IntegerField(default=3)
-    currentRoom = models.ForeignKey(Room, models.SET_NULL, blank=True, null=True)
+    room_id = models.ForeignKey(Room, models.SET_NULL, blank=True, null=True)
  
     def room(self):
         try:
-            return Room.objects.get(id=self.currentRoom)
+            return Room.objects.get(id=self.room_id)
         except Room.DoesNotExist:
             self.initialize()
             return self.room()
