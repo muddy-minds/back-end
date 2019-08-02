@@ -1,8 +1,9 @@
-from django.contrib.postgres.fields import ArrayField
 from django.contrib.postgres.fields import JSONField
 from django.db import models
-from django.db.models import Q
-from datetime import datetime
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from rest_framework.authtoken.models import Token
 
 # class RoomItemField(models.Field):
 #     description = models.CharField(max_length=500)
@@ -49,40 +50,47 @@ class Player(models.Model):
     description = models.CharField(max_length=500)
     health_points = models.FloatField()
     lives = models.IntegerField(default=3)
-    room_id = models.ForeignKey(Room, models.SET_NULL, blank=True, null=True)
+    currentRoom = models.ForeignKey(Room, models.SET_NULL, blank=True, null=True)
  
-    def enterNewRoom(self, command):
-        if type(command) == str:
-            if command == "n":
-                if Room.objects.get(id=room_id).north != 0:
-                    room_id = Room.objects.get(id=room_id).north
-                else:
-                    print("We cannot go north")
-            elif command == "s":
-                if Room.objects.get(id=room_id).south !=0 :
-                    room_id = Room.objects.get(id=room_id).south
-                else:
-                    print("We cannot go south")
-            elif command == "w":
-                if Room.objects.get(id=room_id).west !=0:
-                    room_id = Room.objects.get(id=room_id).west
-                else:
-                    print("We cannot go west")
-            elif command == "e":
-                if Room.objects.get(id=room_id).east !=0:
-                    room_id = Room.objects.get(id=room_id).east 
-                else:
-                    print("We cannot go east")
+    def room(self):
+        try:
+            return Room.objects.get(id=self.currentRoom)
+        except Room.DoesNotExist:
+            self.initialize()
+            return self.room()
 
-    def befriendNPC(self, NPC):
-        if isinstance(NPC, Npc) & NPC.friend_id != None:
-            NPC.friend_id = id
-            print("You are now friends with", NPC.name)
+    # def enterNewRoom(self, command):
+    #     if type(command) == str:
+    #         if command == "n":
+    #             if Room.objects.get(id=room_id).north != 0:
+    #                 room_id = Room.objects.get(id=room_id).north
+    #             else:
+    #                 print("We cannot go north")
+    #         elif command == "s":
+    #             if Room.objects.get(id=room_id).south !=0 :
+    #                 room_id = Room.objects.get(id=room_id).south
+    #             else:
+    #                 print("We cannot go south")
+    #         elif command == "w":
+    #             if Room.objects.get(id=room_id).west !=0:
+    #                 room_id = Room.objects.get(id=room_id).west
+    #             else:
+    #                 print("We cannot go west")
+    #         elif command == "e":
+    #             if Room.objects.get(id=room_id).east !=0:
+    #                 room_id = Room.objects.get(id=room_id).east 
+    #             else:
+    #                 print("We cannot go east")
 
-    def defriendNPC(self, NPC):
-        if isinstance(NPC, Npc) & NPC.friend_id == id:
-            NPC.friend_id = None
-            print("You are not friends with", NPC.name)
+    # def befriendNPC(self, NPC):
+    #     if isinstance(NPC, Npc) & NPC.friend_id != None:
+    #         NPC.friend_id = id
+    #         print("You are now friends with", NPC.name)
+
+    # def defriendNPC(self, NPC):
+    #     if isinstance(NPC, Npc) & NPC.friend_id == id:
+    #         NPC.friend_id = None
+    #         print("You are not friends with", NPC.name)
 
 
 
@@ -96,24 +104,12 @@ class Npc(models.Model):
     description = models.CharField(max_length=500)
 
 
+@receiver(post_save, sender=User)
+def create_user_player(sender, instance, created, **kwargs):
+    if created:
+        Player.objects.create(user=instance)
+        Token.objects.create(user=instance)
 
-# class RoomItems(models.Model):
-#     name = models.CharField(max_length=100)
-#     description = models.CharField(max_length=500)
-#     room_id = models.ForeignKey(Room, models.SET_NULL, blank=True, null=True)
-#     player_id = models.ForeignKey(
-#         Player, models.SET_NULL, blank=True, null=True)
-
-#     class Meta:
-#         abstract = True
-
-# class FoodItem(RoomItems):
-#     health_points = models.FloatField()
-
-
-# class Toys(RoomItems):
-#     some_points = models.FloatField()
-
-
-# class Weapons(RoomItems):
-#     damage_points = models.FloatField()
+@receiver(post_save, sender=User)
+def save_user_player(sender, instance, **kwargs):
+    instance.player.save()
